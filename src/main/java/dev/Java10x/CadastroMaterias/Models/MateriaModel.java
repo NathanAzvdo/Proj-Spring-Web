@@ -4,6 +4,7 @@ package dev.Java10x.CadastroMaterias.Models;
 import jakarta.persistence.*;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Table(name="tb_materias")
@@ -11,7 +12,7 @@ public class MateriaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private UUID id;
     private String turma;
     private String disciplina;
     private String horario1;
