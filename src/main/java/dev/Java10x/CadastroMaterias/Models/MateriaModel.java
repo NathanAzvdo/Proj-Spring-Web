@@ -36,7 +36,7 @@ public class MateriaModel {
         this.horario2 = horario2;
     }
 
-    public int getId(){
+    public UUID getId(){
         return id;
     }
 
