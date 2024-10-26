@@ -1,9 +1,15 @@
 package dev.Java10x.CadastroMaterias.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="tb_incricao")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class InscricaoModel {
 
     private Long id;
@@ -19,24 +25,5 @@ public class InscricaoModel {
     @ManyToOne
     @JoinColumn(name="materia_id")
     private MateriaModel materia;
-
-    public Long getId(){
-        return id;
-    }
-
-    public int getFaltas(){
-        return faltas;
-    }
-
-    public Double getN1(){
-        return n1;
-    }
-    public Double getN2(){
-        return n2;
-    }
-    public String status(){
-        return status;
-    }
-
 
 }

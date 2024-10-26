@@ -2,12 +2,18 @@ package dev.Java10x.CadastroMaterias.Models;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 import java.util.UUID;
 
 @Entity
 @Table(name="tb_materias")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class MateriaModel {
 
     @Id
@@ -24,36 +30,5 @@ public class MateriaModel {
 
     @OneToMany(mappedBy = "materia")
     private Set<InscricaoModel> inscricaoModel;
-
-    public MateriaModel(){
-
-    }
-
-    public MateriaModel(String turma, String disciplina, String horario1, String horario2){
-        this.turma = turma;
-        this.disciplina = disciplina;
-        this.horario1 = horario1;
-        this.horario2 = horario2;
-    }
-
-    public UUID getId(){
-        return id;
-    }
-
-    public String getTurma() {
-        return turma;
-    }
-
-    public String getDisciplina() {
-        return disciplina;
-    }
-
-    public String getHorario1() {
-        return horario1;
-    }
-
-    public String getHorario2() {
-        return horario2;
-    }
 
 }

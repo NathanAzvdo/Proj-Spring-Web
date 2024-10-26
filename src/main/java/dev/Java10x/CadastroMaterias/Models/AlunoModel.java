@@ -1,11 +1,17 @@
 package dev.Java10x.CadastroMaterias.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Entity
 @Table(name="tb_aluno")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class AlunoModel {
 
     @Id
@@ -14,25 +20,8 @@ public class AlunoModel {
     private String nome;
     private String matricula;
 
-    public AlunoModel(){
-
-    }
 
     @OneToMany(mappedBy = "aluno")
     private Set<InscricaoModel> inscricaoModel;
 
-    public AlunoModel(String nome, String matricula){
-        this.nome = nome;
-        this.matricula = matricula;
-    }
-
-    public Long getId(){
-        return id;
-    }
-    public String getNome(){
-        return nome;
-    }
-    public String getMatricula(){
-        return matricula;
-    }
 }
