@@ -1,6 +1,8 @@
-package dev.Java10x.CadastroMaterias.Models;
+package dev.Java10x.CadastroMaterias.Materia;
 
 
+import dev.Java10x.CadastroMaterias.Inscricao.InscricaoModel;
+import dev.Java10x.CadastroMaterias.Professor.ProfessorModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,8 +20,11 @@ public class MateriaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private long id;
+
+    @Column(unique = true)
     private String turma;
+
     private String disciplina;
     private String horario1;
     private String horario2;

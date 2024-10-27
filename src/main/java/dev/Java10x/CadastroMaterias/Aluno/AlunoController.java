@@ -1,4 +1,4 @@
-package dev.Java10x.CadastroMaterias.Controllers;
+package dev.Java10x.CadastroMaterias.Aluno;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

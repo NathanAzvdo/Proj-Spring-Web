@@ -1,5 +1,6 @@
-package dev.Java10x.CadastroMaterias.Models;
+package dev.Java10x.CadastroMaterias.Aluno;
 
+import dev.Java10x.CadastroMaterias.Inscricao.InscricaoModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,6 @@ public class AlunoModel {
     private Long id;
     private String nome;
     private String matricula;
-
 
     @OneToMany(mappedBy = "aluno")
     private Set<InscricaoModel> inscricaoModel;

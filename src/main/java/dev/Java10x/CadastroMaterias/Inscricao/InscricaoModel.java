@@ -1,5 +1,7 @@
-package dev.Java10x.CadastroMaterias.Models;
+package dev.Java10x.CadastroMaterias.Inscricao;
 
+import dev.Java10x.CadastroMaterias.Aluno.AlunoModel;
+import dev.Java10x.CadastroMaterias.Materia.MateriaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class InscricaoModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int faltas;
     private Double n1;
