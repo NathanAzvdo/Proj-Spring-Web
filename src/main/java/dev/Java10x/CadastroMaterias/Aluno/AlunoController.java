@@ -1,15 +1,23 @@
 package dev.Java10x.CadastroMaterias.Aluno;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping
+@RequestMapping("/alunos")
 public class AlunoController {
 
-    @GetMapping("/alunos/")
-    public String paginaInicial(){
-        return "Página inicial aluno";
+    @Autowired
+    private AlunoService alunoService;
+
+    @GetMapping("/listar")
+    public List<AlunoModel> listarAlunos(){
+        return alunoService.listarAlunos();
     }
+
 }
