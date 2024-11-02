@@ -520,3 +520,289 @@ INSERT INTO TB_ALUNOS (id, matricula, nome) VALUES
 (19, '2420052', 'Bruno'),
 (20, '2420053', 'Vanessa'),
 (21, '2420054', 'Gabriel') [42102-224]
+2024-11-02 09:03:21.566210-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROFESSOR" not found; SQL statement:
+INSERT INTO Professor (id, nome) VALUES
+(1, 'Prof. Carlos Souza'),
+(2, 'Prof. Ana Silva'),
+(3, 'Prof. João Ferreira'),
+(4, 'Prof. Marta Oliveira'),
+(5, 'Prof. Pedro Santos'),
+(6, 'Prof. Júlia Costa') [42102-224]
+2024-11-02 09:04:05.756680-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MATERIA" not found; SQL statement:
+INSERT INTO Materia (id, codigo_turma, nome, professor_id, periodo) VALUES
+(1, 'B3', 'Estruturas Organizacionais', 1, 1),
+(2, 'B0', 'Estatística e Probabilidade', 2, 1),
+(3, 'B8', 'Filosofia e Ética', 3, 1),
+(4, 'B8', 'Introdução à Lógica', 4, 1),
+(5, 'B6', 'Noções Básicas de Programação', 5, 1),
+(6, 'P3', 'Noções de Engenharia de Software', 6, 1) [42102-224]
+2024-11-02 09:04:23.604421-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_MATERIA" not found; SQL statement:
+INSERT INTO TB_MATERIA (id, codigo_turma, nome, professor_id, periodo) VALUES
+(1, 'B3', 'Estruturas Organizacionais', 1, 1),
+(2, 'B0', 'Estatística e Probabilidade', 2, 1),
+(3, 'B8', 'Filosofia e Ética', 3, 1),
+(4, 'B8', 'Introdução à Lógica', 4, 1),
+(5, 'B6', 'Noções Básicas de Programação', 5, 1),
+(6, 'P3', 'Noções de Engenharia de Software', 6, 1) [42102-224]
+2024-11-02 09:04:29.525166-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CODIGO_TURMA" not found; SQL statement:
+INSERT INTO TB_MATERIAS (id, codigo_turma, nome, professor_id, periodo) VALUES
+(1, 'B3', 'Estruturas Organizacionais', 1, 1),
+(2, 'B0', 'Estatística e Probabilidade', 2, 1),
+(3, 'B8', 'Filosofia e Ética', 3, 1),
+(4, 'B8', 'Introdução à Lógica', 4, 1),
+(5, 'B6', 'Noções Básicas de Programação', 5, 1),
+(6, 'P3', 'Noções de Engenharia de Software', 6, 1) [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2024-11-02 09:06:13.098535-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MATERIA" not found; SQL statement:
+INSERT INTO Materia (id, codigo_turma, nome, horario1, horario2, professor_id) VALUES
+(1, 'B3', 'Estruturas Organizacionais', '08:00', '10:00', 1),
+(2, 'B0', 'Estatística e Probabilidade', '10:00', '12:00', 2),
+(3, 'B8', 'Filosofia e Ética', '08:00', '10:00', 3),
+(4, 'B8', 'Introdução à Lógica', '10:00', '12:00', 4),
+(5, 'B6', 'Noções Básicas de Programação', '08:00', '10:00', 5),
+(6, 'P3', 'Noções de Engenharia de Software', '10:00', '12:00', 6),
+(7, 'B0', 'Português Instrumental', '08:00', '10:00', 1),
+(8, 'B12', 'Fundamentos da Contabilidade', '10:00', '12:00', 2),
+(9, 'B0', 'Metodologia da Pesquisa', '08:00', '10:00', 3),
+(10, 'B3', 'Cálculo Diferencial e Integral A', '10:00', '12:00', 4),
+(11, 'P3', 'Organização de Computadores I', '08:00', '10:00', 5),
+(12, 'B9', 'Álgebra Linear', '10:00', '12:00', 6),
+(13, 'B3', 'Cálculo Diferencial e Integral B', '08:00', '10:00', 1),
+(14, 'P3', 'Análise de Sistemas I', '10:00', '12:00', 2),
+(15, 'P3', 'Organização de Computadores II', '08:00', '10:00', 3),
+(16, 'B3', 'Cálculo Numérico', '10:00', '12:00', 4),
+(17, 'B8', 'Matemática Discreta', '08:00', '10:00', 5),
+(18, 'P3', 'Projeto de Sistemas I', '10:00', '12:00', 6),
+(19, 'P3', 'Programação de Computadores II', '08:00', '10:00', 1),
+(20, 'P12', 'Gerência de Projetos', '10:00', '12:00', 2),
+(21, 'P3', 'Banco de Dados I', '08:00', '10:00', 3),
+(22, 'P3', 'Projeto de Sistemas II', '10:00', '12:00', 4),
+(23, 'P3', 'Programação de Computadores III', '08:00', '10:00', 5),
+(24, 'P12', 'Qualidade de Software', '10:00', '12:00', 6),
+(25, 'P3', 'Banco de Dados II', '08:00', '10:00', 1),
+(26, 'P3', 'UX e Desenvolvimento Web', '10:00', '12:00', 2),
+(27, 'P12', 'Sistemas de Informação Gerenciais', '08:00', '10:00', 3),
+(28, 'P3', 'Desenvolvimento de Sistemas I', '10:00', '12:00', 4),
+(29, 'P3', 'Desenvolvimento para Dispositivos Móveis', '08:00', '10:00', 5),
+(30, 'P3', 'Sistemas Operacionais I', '10:00', '12:00', 6),
+(31, 'P3', 'Banco de Dados III', '08:00', '10:00', 1),
+(32, 'P3', 'Desenvolvimento de Sistemas II', '10:00', '12:00', 2),
+(33, 'P3', 'Introdução a Redes de Computadores', '08:00', '10:00', 3),
+(34, 'P3', 'Gestão de Redes', '10:00', '12:00', 4),
+(35, 'P3', 'Sistemas Operacionais II', '08:00', '10:00', 5),
+(36, 'P3', 'Empreendedorismo e Gestão Estratégica', '10:00', '12:00', 6),
+(37, 'P3', 'Gerência de Sistemas e Projetos', '08:00', '10:00', 1),
+(38, 'P3', 'Trabalho de Conclusão de Curso I', '10:00', '12:00', 2),
+(39, 'P3', 'Trabalho de Conclusão de Curso II', '08:00', '10:00', 3),
+(40, 'P3', 'Estágio Supervisionado I', '10:00', '12:00', 4),
+(41, 'P3', 'Estágio Supervisionado II', '08:00', '10:00', 5) [42102-224]
+2024-11-02 09:06:32.716697-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_MATERIA" not found; SQL statement:
+INSERT INTO TB_MATERIA (id, codigo_turma, nome, horario1, horario2, professor_id) VALUES
+(1, 'B3', 'Estruturas Organizacionais', '08:00', '10:00', 1),
+(2, 'B0', 'Estatística e Probabilidade', '10:00', '12:00', 2),
+(3, 'B8', 'Filosofia e Ética', '08:00', '10:00', 3),
+(4, 'B8', 'Introdução à Lógica', '10:00', '12:00', 4),
+(5, 'B6', 'Noções Básicas de Programação', '08:00', '10:00', 5),
+(6, 'P3', 'Noções de Engenharia de Software', '10:00', '12:00', 6),
+(7, 'B0', 'Português Instrumental', '08:00', '10:00', 1),
+(8, 'B12', 'Fundamentos da Contabilidade', '10:00', '12:00', 2),
+(9, 'B0', 'Metodologia da Pesquisa', '08:00', '10:00', 3),
+(10, 'B3', 'Cálculo Diferencial e Integral A', '10:00', '12:00', 4),
+(11, 'P3', 'Organização de Computadores I', '08:00', '10:00', 5),
+(12, 'B9', 'Álgebra Linear', '10:00', '12:00', 6),
+(13, 'B3', 'Cálculo Diferencial e Integral B', '08:00', '10:00', 1),
+(14, 'P3', 'Análise de Sistemas I', '10:00', '12:00', 2),
+(15, 'P3', 'Organização de Computadores II', '08:00', '10:00', 3),
+(16, 'B3', 'Cálculo Numérico', '10:00', '12:00', 4),
+(17, 'B8', 'Matemática Discreta', '08:00', '10:00', 5),
+(18, 'P3', 'Projeto de Sistemas I', '10:00', '12:00', 6),
+(19, 'P3', 'Programação de Computadores II', '08:00', '10:00', 1),
+(20, 'P12', 'Gerência de Projetos', '10:00', '12:00', 2),
+(21, 'P3', 'Banco de Dados I', '08:00', '10:00', 3),
+(22, 'P3', 'Projeto de Sistemas II', '10:00', '12:00', 4),
+(23, 'P3', 'Programação de Computadores III', '08:00', '10:00', 5),
+(24, 'P12', 'Qualidade de Software', '10:00', '12:00', 6),
+(25, 'P3', 'Banco de Dados II', '08:00', '10:00', 1),
+(26, 'P3', 'UX e Desenvolvimento Web', '10:00', '12:00', 2),
+(27, 'P12', 'Sistemas de Informação Gerenciais', '08:00', '10:00', 3),
+(28, 'P3', 'Desenvolvimento de Sistemas I', '10:00', '12:00', 4),
+(29, 'P3', 'Desenvolvimento para Dispositivos Móveis', '08:00', '10:00', 5),
+(30, 'P3', 'Sistemas Operacionais I', '10:00', '12:00', 6),
+(31, 'P3', 'Banco de Dados III', '08:00', '10:00', 1),
+(32, 'P3', 'Desenvolvimento de Sistemas II', '10:00', '12:00', 2),
+(33, 'P3', 'Introdução a Redes de Computadores', '08:00', '10:00', 3),
+(34, 'P3', 'Gestão de Redes', '10:00', '12:00', 4),
+(35, 'P3', 'Sistemas Operacionais II', '08:00', '10:00', 5),
+(36, 'P3', 'Empreendedorismo e Gestão Estratégica', '10:00', '12:00', 6),
+(37, 'P3', 'Gerência de Sistemas e Projetos', '08:00', '10:00', 1),
+(38, 'P3', 'Trabalho de Conclusão de Curso I', '10:00', '12:00', 2),
+(39, 'P3', 'Trabalho de Conclusão de Curso II', '08:00', '10:00', 3),
+(40, 'P3', 'Estágio Supervisionado I', '10:00', '12:00', 4),
+(41, 'P3', 'Estágio Supervisionado II', '08:00', '10:00', 5) [42102-224]
+2024-11-02 09:06:39.778320-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CODIGO_TURMA" not found; SQL statement:
+INSERT INTO TB_MATERIAS (id, codigo_turma, nome, horario1, horario2, professor_id) VALUES
+(1, 'B3', 'Estruturas Organizacionais', '08:00', '10:00', 1),
+(2, 'B0', 'Estatística e Probabilidade', '10:00', '12:00', 2),
+(3, 'B8', 'Filosofia e Ética', '08:00', '10:00', 3),
+(4, 'B8', 'Introdução à Lógica', '10:00', '12:00', 4),
+(5, 'B6', 'Noções Básicas de Programação', '08:00', '10:00', 5),
+(6, 'P3', 'Noções de Engenharia de Software', '10:00', '12:00', 6),
+(7, 'B0', 'Português Instrumental', '08:00', '10:00', 1),
+(8, 'B12', 'Fundamentos da Contabilidade', '10:00', '12:00', 2),
+(9, 'B0', 'Metodologia da Pesquisa', '08:00', '10:00', 3),
+(10, 'B3', 'Cálculo Diferencial e Integral A', '10:00', '12:00', 4),
+(11, 'P3', 'Organização de Computadores I', '08:00', '10:00', 5),
+(12, 'B9', 'Álgebra Linear', '10:00', '12:00', 6),
+(13, 'B3', 'Cálculo Diferencial e Integral B', '08:00', '10:00', 1),
+(14, 'P3', 'Análise de Sistemas I', '10:00', '12:00', 2),
+(15, 'P3', 'Organização de Computadores II', '08:00', '10:00', 3),
+(16, 'B3', 'Cálculo Numérico', '10:00', '12:00', 4),
+(17, 'B8', 'Matemática Discreta', '08:00', '10:00', 5),
+(18, 'P3', 'Projeto de Sistemas I', '10:00', '12:00', 6),
+(19, 'P3', 'Programação de Computadores II', '08:00', '10:00', 1),
+(20, 'P12', 'Gerência de Projetos', '10:00', '12:00', 2),
+(21, 'P3', 'Banco de Dados I', '08:00', '10:00', 3),
+(22, 'P3', 'Projeto de Sistemas II', '10:00', '12:00', 4),
+(23, 'P3', 'Programação de Computadores III', '08:00', '10:00', 5),
+(24, 'P12', 'Qualidade de Software', '10:00', '12:00', 6),
+(25, 'P3', 'Banco de Dados II', '08:00', '10:00', 1),
+(26, 'P3', 'UX e Desenvolvimento Web', '10:00', '12:00', 2),
+(27, 'P12', 'Sistemas de Informação Gerenciais', '08:00', '10:00', 3),
+(28, 'P3', 'Desenvolvimento de Sistemas I', '10:00', '12:00', 4),
+(29, 'P3', 'Desenvolvimento para Dispositivos Móveis', '08:00', '10:00', 5),
+(30, 'P3', 'Sistemas Operacionais I', '10:00', '12:00', 6),
+(31, 'P3', 'Banco de Dados III', '08:00', '10:00', 1),
+(32, 'P3', 'Desenvolvimento de Sistemas II', '10:00', '12:00', 2),
+(33, 'P3', 'Introdução a Redes de Computadores', '08:00', '10:00', 3),
+(34, 'P3', 'Gestão de Redes', '10:00', '12:00', 4),
+(35, 'P3', 'Sistemas Operacionais II', '08:00', '10:00', 5),
+(36, 'P3', 'Empreendedorismo e Gestão Estratégica', '10:00', '12:00', 6),
+(37, 'P3', 'Gerência de Sistemas e Projetos', '08:00', '10:00', 1),
+(38, 'P3', 'Trabalho de Conclusão de Curso I', '10:00', '12:00', 2),
+(39, 'P3', 'Trabalho de Conclusão de Curso II', '08:00', '10:00', 3),
+(40, 'P3', 'Estágio Supervisionado I', '10:00', '12:00', 4),
+(41, 'P3', 'Estágio Supervisionado II', '08:00', '10:00', 5) [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
