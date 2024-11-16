@@ -1,5 +1,9 @@
 package dev.Java10x.CadastroMaterias.Materia;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class MateriaMapper {
 
     MateriaDTO map(MateriaModel materiaModel){
