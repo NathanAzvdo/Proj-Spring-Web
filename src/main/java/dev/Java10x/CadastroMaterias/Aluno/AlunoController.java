@@ -17,6 +17,6 @@ public class AlunoController{
     }
 
     @GetMapping("/listar")
-    public List<AlunoModel> listarAlunos(){return alunoService.listarAlunos();}
+    public List<AlunoDTO> listarAlunos(){return alunoService.listarAlunos();}
 
 }
