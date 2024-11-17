@@ -1,9 +1,9 @@
 package dev.Java10x.CadastroMaterias.Professor;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -11,15 +11,48 @@ import java.util.List;
 @RequestMapping("/professor")
 public class ProfessorController{
 
-    private ProfessorService professorService;
+    private final ProfessorService professorService;
 
     public ProfessorController(ProfessorService professorService){
         this.professorService = professorService;
     }
 
-    @GetMapping("/listarProfessores")
-    public List<ProfessorModel> listarTodos(){
-        return professorService.listarProfessores();
+    @GetMapping("/listar")
+    public List<ProfessorDTO> listarTodos(){
+        return professorService.listarProfessor();
+    }
+
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<ProfessorDTO> listarPorId(@PathVariable Long id){
+        ProfessorDTO professor = professorService.listarPorId(id);
+        if(professor!=null){
+            return ResponseEntity.ok().body(professor);
+        }
+        return null;
+    }
+
+    @PostMapping("/criar")
+    public ResponseEntity<ProfessorDTO> insertProfessor(ProfessorDTO professor){
+        ProfessorDTO newProfessor = professorService.insertProfessor(professor);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newProfessor);
+    }
+
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<String> deletarProfessorPorId(@PathVariable Long id){
+        if(professorService.listarPorId(id)!=null){
+            professorService.deletarPorId(id);
+            return ResponseEntity.ok().body("Deletado com sucesso");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Professor não encontrado!");
+    }
+
+    @PutMapping("/atualizar/{id}")
+    public ResponseEntity<?> atualizarProfessor(@PathVariable Long id, @RequestBody ProfessorDTO newProfessor){
+        if(professorService.listarPorId(id)!=null){
+            ProfessorDTO professorSaved = professorService.atualizarPorId(id, newProfessor);
+            return ResponseEntity.ok().body(professorSaved);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Professor não encontrado!");
     }
 
 
