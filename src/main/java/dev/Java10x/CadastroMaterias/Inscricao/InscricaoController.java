@@ -18,7 +18,7 @@ public class InscricaoController {
         this.inscricaoService = inscricaoService;
     }
 
-    @GetMapping("/listarTodos")
+    @GetMapping("/listar")
     public ResponseEntity<List<?>> listarTodos(){
         List<InscricaoDTO> inscricoes = inscricaoService.listarTodos();
         return ResponseEntity.ok().body(inscricoes);

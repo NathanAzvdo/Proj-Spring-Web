@@ -46,7 +46,7 @@ public class ProfessorController{
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Professor não encontrado!");
     }
 
-    @PutMapping("/atualizar/{id}")
+    @PutMapping("/alterar/{id}")
     public ResponseEntity<?> atualizarProfessor(@PathVariable Long id, @RequestBody ProfessorDTO newProfessor){
         if(professorService.listarPorId(id)!=null){
             ProfessorDTO professorSaved = professorService.atualizarPorId(id, newProfessor);
